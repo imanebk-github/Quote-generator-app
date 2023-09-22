@@ -21,10 +21,10 @@ const randomQuote = () => {
         quoteBtn.classList.remove('loading');
     })
 }
-
+// add the sound utterance
 soundbt.addEventListener('click', () => {
     // Web Speech API
-    let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText}`);
+    let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${author.innerText}`);
     utterance.lang = "en-UK";
     let voices = window.speechSynthesis.getVoices();
 
@@ -41,4 +41,17 @@ soundbt.addEventListener('click', () => {
     }
     speechSynthesis.speak(utterance);
 })
+
+// add the copy button functionality
+copydbt.addEventListener('click', () => {
+    navigator.clipboard.writeText(quoteText.innerText + 'by' + author.innerText)
+})
+
+// tweet the quote
+twitterbt.addEventListener('click', () => {
+    let twitterUrl = `https://twitter.com/intent/tweet?url=${quoteText.innerText} by ${author.innerText}`;
+    window.open(twitterUrl, '_blank');
+})
+
+// click event to generate new quote
 quoteBtn.addEventListener('click', randomQuote);
