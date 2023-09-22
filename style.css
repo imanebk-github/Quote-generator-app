@@ -29,11 +29,9 @@ body{
 
 header{
     color: #000;
-font-size: 36px;
-    font-size: 2.7em;
+    font-size: 2.1em;
     font-weight: 700;
     text-align: center;
-    /* margin-top: 30px; */
 }
 .content{
     display: flex;
@@ -105,7 +103,7 @@ li:hover{
 button.new-quote{
 color: #000000;
 font-family: Montserrat;
-font-size: 22px;
+font-size: 18px;
 font-style: normal;
 font-weight: 500;
 background: #ffffff;
@@ -120,4 +118,9 @@ button.new-quote:hover{
     border: none;
     color: #ffffff;
     transform: scale(1.09) ease;
+}
+
+button.new-quote.loading{
+    opacity: 0.7;
+    pointer-events: none;
 }
